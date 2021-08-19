@@ -45,7 +45,7 @@
     (if (from-cursive? code)
       (handler msg)
       ;; TODO Figure out which keys should be selected.
-      (let [message    (select-keys msg [:id :op :code :file :file-name :file-path])
+      (let [message    (select-keys msg [:id :op :ns :code :file :file-name :file-path])
             responses  (nrepl/message client message)
             session-id (if (instance? clojure.lang.AReference session)
                          (-> session meta :id)
